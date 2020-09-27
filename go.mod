@@ -1,3 +1,3 @@
-module github.com/ahafizi/bank/v2
+module github.com/ahafizi/bank
 
 go 1.15
