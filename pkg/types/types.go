@@ -22,7 +22,6 @@ type Card struct {
 	Color      string
 	Name       string
 	Active     bool
-	MinBalance Money
 }
 
 type PaymentSource struct {
@@ -34,9 +33,20 @@ type PaymentSource struct {
 // Category представляет собой категорию, в которой был совершен платёж (авто, аптеки, рестораны и т.д)
 type Category string
 
+// Status представляет с собой статус платежа.
+type Status string
+
+// Переопределенные статусы платежей.
+const (
+	StatusOk Status = "OK"
+	StatusFail Status = "FAIL"
+	StatusInProgress Status = "INPROGRESS"
+)
+
 // Payment представляет с собой информацию о платеже
 type Payment struct {
 	ID       int
 	Amount   Money
 	Category Category
+	Status   Status
 }
